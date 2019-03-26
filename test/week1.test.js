@@ -63,7 +63,7 @@ describe("getSalePrice", () => {
     expect(getSalePrice(79.99, 15)).toBe(67.99);
   });
 
-  test.only("reduces a price of 50 by 0%", () => {
+  test("reduces a price of 50 by 0%", () => {
     // expect(getSalePrice(50, 0)).toBe(0);
     expect(getSalePrice(50, 0)).toBe(50);
   });
@@ -80,7 +80,7 @@ describe("getMiddleCharacter", () => {
 });
 
 describe("reverseWord", () => {
-  test("returns the provided word, reversed", () => {
+  test.only("returns the provided word, reversed", () => {
     expect(reverseWord("foo")).toBe("oof");
   });
 
