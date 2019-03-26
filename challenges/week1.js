@@ -1,24 +1,33 @@
 function capitalize(word) {
   if (word === undefined) throw new Error("word is required");
   // Add your code here!
+  return word[0].toUpperCase() + word.slice(1);
 }
 
 function generateInitials(firstName, lastName) {
   if (firstName === undefined) throw new Error("firstName is required");
   if (lastName === undefined) throw new Error("lastName is required");
   // Add your code here!
+  return firstName[0] + "." + lastName[0]; 
 }
 
 function addVAT(originalPrice, vatRate) {
   if (originalPrice === undefined) throw new Error("originalPrice is requied");
   if (vatRate === undefined) throw new Error("vatRate is required");
   // Add your code here!
+  let totalWithVAT = originalPrice + (originalPrice * (vatRate / 100))
+  // return answer to 2 dec places
+  return Math.round(totalWithVAT * 100) / 100;
+
 }
 
 function getSalePrice(originalPrice, reduction) {
   if (originalPrice === undefined) throw new Error("originalPrice is required");
   if (reduction === undefined) throw new Error("reduction is required");
   // Add your code here!
+  let reducedPrice = originalPrice - (originalPrice * (reduction/100))
+  // return answer to 2 dec places
+  return Math.round(reducedPrice * 100) / 100;
 }
 
 function getMiddleCharacter(str) {

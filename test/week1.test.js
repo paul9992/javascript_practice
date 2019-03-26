@@ -8,6 +8,7 @@ const {
   reverseAllWords,
   countLinuxUsers,
   getMeanScore,
+
   simpleFizzBuzz
 } = require("../challenges/week1");
 
@@ -62,8 +63,9 @@ describe("getSalePrice", () => {
     expect(getSalePrice(79.99, 15)).toBe(67.99);
   });
 
-  test("reduces a price of 50 by 0%", () => {
-    expect(getSalePrice(50, 0)).toBe(0);
+  test.only("reduces a price of 50 by 0%", () => {
+    // expect(getSalePrice(50, 0)).toBe(0);
+    expect(getSalePrice(50, 0)).toBe(50);
   });
 });
 
