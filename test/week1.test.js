@@ -129,7 +129,7 @@ describe("countLinuxUsers", () => {
 });
 
 describe("getMeanScore", () => {
-  test.only("returns the mean score from an array of scores", () => {
+  test("returns the mean score from an array of scores", () => {
     expect(getMeanScore([8, 9, 7])).toBe(8);
     expect(getMeanScore([88, 86, 93])).toBe(89);
   });
@@ -145,7 +145,7 @@ describe("simpleFizzBuzz", () => {
   });
 
   test("returns 'buzz' if the number is divisible by 5", () => {
-    expect(simpleFizzBuzz(3)).toBe("buzz");
+    expect(simpleFizzBuzz(5)).toBe("buzz");
   });
 
   test("returns the number if the number is divisible by neither 3 nor 5", () => {
