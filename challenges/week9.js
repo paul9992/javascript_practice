@@ -6,6 +6,18 @@
  */
 const sumMultiples = arr => {
   if (!arr) throw new Error("arr is required");
+
+  let total = 0;
+
+  arr.forEach(element => {
+    if (element % 5 === 0 || element % 3 === 0)
+    {
+      total += element;
+    }
+  })
+
+  return total;
+
 };
 
 /**
@@ -15,6 +27,16 @@ const sumMultiples = arr => {
  */
 const isValidDNA = str => {
   if (!str) throw new Error("str is required");
+ 
+  for (let i = 0; i < (str.length); i++) 
+  { 
+    if (str[i] !== 'C' && str[i] !== 'G' && str[i] !== 'A' && str[i] !== 'T')
+    {
+        /* return false and stop checking */
+        return false;
+    }
+  }
+  return true;
 };
 
 /**
@@ -24,6 +46,29 @@ const isValidDNA = str => {
  */
 const getComplementaryDNA = str => {
   if (!str) throw new Error("str is required");
+ 
+  /* check this is a DNA string */
+  if (!isValidDNA(str)) throw new Error("string is not valid DNA");
+
+  /* define function to do the complmentary DNA mapping for a single character */
+  function mapChars (char) {
+    if (char === 'T') {return 'A'}
+    if (char === 'A') {return 'T'}
+    if (char === 'C') {return 'G'}
+    if (char === 'G') {return 'C'}
+  }
+
+  /* split the input string into separate chars in an array so we can map each element */
+  let str_array = str.split("");
+
+  /* declare the array we're going to map into */
+  let comp_str = [];
+
+  /* map each element of the input array to its complementary value */ 
+  comp_str = str_array.map(mapChars);
+
+  /* jin up the chars within the array to form a string and return it */
+  return comp_str.join("");
 };
 
 /**
